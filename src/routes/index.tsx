@@ -5,8 +5,8 @@ export const Route = createFileRoute("/")({
   component: Home,
   head: () => ({
     meta: [
-      { title: "Pace — Drink smart, stay safe" },
-      { name: "description", content: "Pace yourself. Learn how alcohol affects your body, recognize binge drinking, and track drinks safely." },
+      { title: "Safe Sipping — Drink smart, stay safe" },
+      { name: "description", content: "Safe Sipping helps you learn how alcohol affects your body, recognize binge drinking, and track drinks safely." },
     ],
   }),
 });
