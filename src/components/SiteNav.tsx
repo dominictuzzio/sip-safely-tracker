@@ -35,7 +35,7 @@ export function SiteFooter() {
   return (
     <footer className="border-t border-border mt-24">
       <div className="max-w-6xl mx-auto px-6 py-10 text-sm text-muted-foreground flex flex-wrap gap-4 justify-between">
-        <p>© {new Date().getFullYear()} Pace. Educational tool — not medical advice.</p>
+        <p>© {new Date().getFullYear()} Safe Sipping. Educational tool — not medical advice.</p>
         <p>If you or someone you know is struggling, call <a className="underline hover:text-foreground" href="tel:988">988</a> or SAMHSA <a className="underline hover:text-foreground" href="tel:18006624357">1-800-662-4357</a>.</p>
       </div>
     </footer>
