@@ -28,7 +28,12 @@ function loadProfile(): Profile | null {
   if (typeof window === "undefined") return null;
   try {
     const raw = localStorage.getItem(PROFILE_KEY);
-    return raw ? (JSON.parse(raw) as Profile) : null;
+    if (!raw) return null;
+    const p = JSON.parse(raw) as Partial<Profile>;
+    if (!p.heightCm || !p.weightKg || !p.gender || !p.age || p.avgDrinksPerWeek === undefined) {
+      return null;
+    }
+    return p as Profile;
   } catch {
     return null;
   }
