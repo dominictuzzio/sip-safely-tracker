@@ -292,15 +292,24 @@ function ProfileForm({
   const [heightCm, setHeightCm] = useState(initial?.heightCm?.toString() ?? "");
   const [weightKg, setWeightKg] = useState(initial?.weightKg?.toString() ?? "");
   const [gender, setGender] = useState<Gender>(initial?.gender ?? "other");
+  const [age, setAge] = useState(initial?.age?.toString() ?? "");
+  const [avgDrinksPerWeek, setAvgDrinksPerWeek] = useState(
+    initial?.avgDrinksPerWeek?.toString() ?? "",
+  );
   const [error, setError] = useState<string | null>(null);
 
   function submit(e: React.FormEvent) {
     e.preventDefault();
     const h = Number(heightCm);
     const w = Number(weightKg);
+    const a = Number(age);
+    const avg = Number(avgDrinksPerWeek);
     if (!h || h < 100 || h > 250) return setError("Enter a realistic height in cm (100–250).");
     if (!w || w < 30 || w > 250) return setError("Enter a realistic weight in kg (30–250).");
-    onSave({ heightCm: h, weightKg: w, gender });
+    if (!a || a < 18 || a > 100) return setError("Enter a realistic age (18–100).");
+    if (Number.isNaN(avg) || avg < 0 || avg > 100)
+      return setError("Enter average drinks per week (0–100).");
+    onSave({ heightCm: h, weightKg: w, gender, age: a, avgDrinksPerWeek: avg });
   }
 
   return (
@@ -328,6 +337,29 @@ function ProfileForm({
             max="250"
             value={weightKg}
             onChange={(e) => setWeightKg(e.target.value)}
+            className="w-full bg-background border border-input rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-ring"
+            required
+          />
+        </Field>
+        <Field label="Age">
+          <input
+            type="number"
+            min="18"
+            max="100"
+            value={age}
+            onChange={(e) => setAge(e.target.value)}
+            className="w-full bg-background border border-input rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-ring"
+            required
+          />
+        </Field>
+        <Field label="Avg drinks / week">
+          <input
+            type="number"
+            min="0"
+            max="100"
+            step="0.5"
+            value={avgDrinksPerWeek}
+            onChange={(e) => setAvgDrinksPerWeek(e.target.value)}
             className="w-full bg-background border border-input rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-ring"
             required
           />
