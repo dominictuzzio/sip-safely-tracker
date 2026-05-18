@@ -1,26 +1,100 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
+import { SiteNav, SiteFooter } from "@/components/SiteNav";
 
 export const Route = createFileRoute("/")({
-  component: Index,
+  component: Home,
+  head: () => ({
+    meta: [
+      { title: "Pace — Drink smart, stay safe" },
+      { name: "description", content: "Pace yourself. Learn how alcohol affects your body, recognize binge drinking, and track drinks safely." },
+    ],
+  }),
 });
 
-// IMPORTANT: Replace this placeholder. For sites with multiple pages (About, Services, Contact, etc.),
-// create separate route files (about.tsx, services.tsx, contact.tsx) — don't put all pages in this file.
-function PlaceholderIndex() {
+function Home() {
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
+    <div className="min-h-screen flex flex-col">
+      <SiteNav />
+      <main className="flex-1">
+        {/* Hero */}
+        <section className="max-w-6xl mx-auto px-6 pt-20 pb-24">
+          <div className="grid md:grid-cols-12 gap-10 items-end">
+            <div className="md:col-span-8">
+              <p className="text-sm uppercase tracking-[0.2em] text-muted-foreground mb-6">A gentle guide to drinking</p>
+              <h1 className="font-display text-6xl md:text-8xl leading-[0.95] font-semibold">
+                Know your <em className="text-primary not-italic">pace</em>.<br />
+                Enjoy the night.
+              </h1>
+              <p className="mt-8 text-lg text-muted-foreground max-w-xl">
+                Pace helps you understand what alcohol does to your body — and quietly times your next drink so you stay in the safe zone.
+              </p>
+              <div className="mt-10 flex flex-wrap gap-3">
+                <Link to="/log" className="inline-flex items-center px-6 py-3 rounded-full bg-foreground text-background font-medium hover:opacity-90 transition">
+                  Start a drink log →
+                </Link>
+                <Link to="/learn" className="inline-flex items-center px-6 py-3 rounded-full border border-border bg-card hover:bg-secondary transition">
+                  Learn the basics
+                </Link>
+              </div>
+            </div>
+            <div className="md:col-span-4">
+              <div className="rounded-3xl bg-card border border-border p-6 shadow-sm">
+                <p className="text-xs uppercase tracking-widest text-muted-foreground">Quick fact</p>
+                <p className="font-display text-3xl mt-3 leading-tight">
+                  The liver clears about <span className="text-primary">one standard drink</span> per hour.
+                </p>
+                <p className="text-sm text-muted-foreground mt-4">
+                  Drinking faster than that means alcohol builds up in your blood — that's how a fun night turns risky.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Three pillars */}
+        <section className="max-w-6xl mx-auto px-6 py-16 border-t border-border">
+          <h2 className="font-display text-4xl md:text-5xl mb-12 max-w-2xl">Three things worth knowing before you pour another.</h2>
+          <div className="grid md:grid-cols-3 gap-6">
+            {[
+              {
+                k: "01",
+                title: "A standard drink isn't what you think",
+                body: "12oz beer, 5oz wine, and a 1.5oz shot all contain about 14g of pure alcohol. A craft IPA or a mixed cocktail often counts as more.",
+              },
+              {
+                k: "02",
+                title: "Binge drinking has a definition",
+                body: "4+ drinks for women or 5+ for men within ~2 hours pushes most people over 0.08% BAC. That's the legal limit for driving — and well into impairment.",
+              },
+              {
+                k: "03",
+                title: "Pacing changes everything",
+                body: "Water between drinks, food in your stomach, and a one-drink-per-hour rhythm let your body keep up.",
+              },
+            ].map((c) => (
+              <div key={c.k} className="rounded-3xl bg-card border border-border p-8 hover:shadow-md transition-shadow">
+                <p className="text-sm text-accent font-medium">{c.k}</p>
+                <h3 className="font-display text-2xl mt-4 leading-snug">{c.title}</h3>
+                <p className="text-muted-foreground mt-4 text-sm leading-relaxed">{c.body}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* CTA */}
+        <section className="max-w-6xl mx-auto px-6 py-20">
+          <div className="rounded-[2rem] bg-primary text-primary-foreground p-12 md:p-16 flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
+            <div>
+              <h2 className="font-display text-4xl md:text-5xl max-w-xl leading-tight">Ready to pace your night?</h2>
+              <p className="opacity-80 mt-4 max-w-md">Log a drink, get a personalized timer for the next one. Resets every morning.</p>
+            </div>
+            <Link to="/log" className="inline-flex shrink-0 items-center px-7 py-4 rounded-full bg-background text-foreground font-medium hover:scale-[1.02] transition">
+              Open the log →
+            </Link>
+          </div>
+        </section>
+      </main>
+      <SiteFooter />
     </div>
   );
-}
-
-function Index() {
-  return <PlaceholderIndex />;
 }
