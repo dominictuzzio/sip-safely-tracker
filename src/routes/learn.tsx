@@ -5,7 +5,7 @@ export const Route = createFileRoute("/learn")({
   component: LearnPage,
   head: () => ({
     meta: [
-      { title: "Learn — Binge drinking & alcohol abuse | Pace" },
+      { title: "Learn — Binge drinking & alcohol abuse | Safe Sipping" },
       { name: "description", content: "Understand binge drinking, alcohol abuse, BAC, and how to stay safer when you drink." },
     ],
   }),
