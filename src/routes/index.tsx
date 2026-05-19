@@ -26,7 +26,7 @@ function Home() {
                 Enjoy the night.
               </h1>
               <p className="mt-8 text-lg text-muted-foreground max-w-xl">
-                Pace helps you understand what alcohol does to your body — and quietly times your next drink so you stay in the safe zone.
+                Smart Sipping helps you understand what alcohol does to your body — and quietly times your next drink so you stay in the safe zone.
               </p>
               <div className="mt-10 flex flex-wrap gap-3">
                 <Link to="/log" className="inline-flex items-center px-6 py-3 rounded-full bg-foreground text-background font-medium hover:opacity-90 transition">
