@@ -5,8 +5,8 @@ export const Route = createFileRoute("/")({
   component: Home,
   head: () => ({
     meta: [
-      { title: "Pace — Drink smart, stay safe" },
-      { name: "description", content: "Pace yourself. Learn how alcohol affects your body, recognize binge drinking, and track drinks safely." },
+      { title: "Smarter Sipping — Drink smart, stay safe" },
+      { name: "description", content: "Sip safely. Learn how alcohol affects your body, recognize binge drinking, and track drinks safely." },
     ],
   }),
 });
@@ -22,11 +22,11 @@ function Home() {
             <div className="md:col-span-8">
               <p className="text-sm uppercase tracking-[0.2em] text-muted-foreground mb-6">A gentle guide to drinking</p>
               <h1 className="font-display text-6xl md:text-8xl leading-[0.95] font-semibold">
-                Know how to <em className="text-primary not-italic">sip safely</em>.<br />
+                Know how to <em className="text-primary not-italic">sip smarter</em>.<br />
                 Enjoy the night.
               </h1>
               <p className="mt-8 text-lg text-muted-foreground max-w-xl">
-                Pace helps you understand what alcohol does to your body — and quietly times your next drink so you stay in the safe zone.
+                Smart Sipping helps you understand what alcohol does to your body — and quietly times your next drink so you stay in the safe zone.
               </p>
               <div className="mt-10 flex flex-wrap gap-3">
                 <Link to="/log" className="inline-flex items-center px-6 py-3 rounded-full bg-foreground text-background font-medium hover:opacity-90 transition">
@@ -85,7 +85,7 @@ function Home() {
         <section className="max-w-6xl mx-auto px-6 py-20">
           <div className="rounded-[2rem] bg-primary text-primary-foreground p-12 md:p-16 flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
             <div>
-              <h2 className="font-display text-4xl md:text-5xl max-w-xl leading-tight">Ready to pace your night?</h2>
+              <h2 className="font-display text-4xl md:text-5xl max-w-xl leading-tight">Ready to sip smarter?</h2>
               <p className="opacity-80 mt-4 max-w-md">Log a drink, get a personalized timer for the next one. Resets every morning.</p>
             </div>
             <Link to="/log" className="inline-flex shrink-0 items-center px-7 py-4 rounded-full bg-background text-foreground font-medium hover:scale-[1.02] transition">
