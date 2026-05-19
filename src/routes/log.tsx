@@ -21,8 +21,8 @@ export const Route = createFileRoute("/log")({
   }),
 });
 
-const PROFILE_KEY = "pace:profile";
-const LOG_KEY = "pace:log";
+const PROFILE_KEY = "smart sipping:profile";
+const LOG_KEY = "smart sipping:log";
 
 function loadProfile(): Profile | null {
   if (typeof window === "undefined") return null;
@@ -250,7 +250,7 @@ function TimerDisplay({ next }: { next: ReturnType<typeof minutesUntilNextDrink>
     return (
       <div className="mt-4">
         <p className="font-display text-7xl md:text-8xl text-success">Now</p>
-        <p className="text-muted-foreground mt-3">{next.reason === "ready" && next.currentBAC === 0 ? "Have a great night. Pace yourself." : "You're paced. One more is okay — slowly."}</p>
+        <p className="text-muted-foreground mt-3">{next.reason === "ready" && next.currentBAC === 0 ? "Have a great night. Pace yourself." : "One more is okay — slowly."}</p>
       </div>
     );
   }
