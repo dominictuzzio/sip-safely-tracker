@@ -22,7 +22,7 @@ function Home() {
             <div className="md:col-span-8">
               <p className="text-sm uppercase tracking-[0.2em] text-muted-foreground mb-6">A gentle guide to drinking</p>
               <h1 className="font-display text-6xl md:text-8xl leading-[0.95] font-semibold">
-                Know your <em className="text-primary not-italic">pace</em>.<br />
+                Know how to <em className="text-primary not-italic">sip safely</em>.<br />
                 Enjoy the night.
               </h1>
               <p className="mt-8 text-lg text-muted-foreground max-w-xl">
