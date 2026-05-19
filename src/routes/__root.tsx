@@ -72,10 +72,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Pace — Drink smart, stay safe" },
+      { title: "Smarter Sipping — Drink smart, stay safe" },
       { name: "description", content: "Learn to drink safely. Track your drinks, understand binge drinking risks, and get paced reminders." },
-      { name: "author", content: "Pace" },
-      { property: "og:title", content: "Pace — Drink smart, stay safe" },
+      { name: "author", content: "Smarter Sipping" },
+      { property: "og:title", content: "Smarter Sipping — Drink smart, stay safe" },
       { property: "og:description", content: "Track drinks, learn the risks, pace yourself." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },

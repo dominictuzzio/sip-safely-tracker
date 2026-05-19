@@ -15,7 +15,7 @@ export const Route = createFileRoute("/log")({
   component: LogPage,
   head: () => ({
     meta: [
-      { title: "Drink Log — Pace yourself | Pace" },
+      { title: "Drink Log — Pace yourself | Smarter Sipping" },
       { name: "description", content: "Log drinks, get personalized pacing timers, and track your BAC throughout the night." },
     ],
   }),
