@@ -60,19 +60,25 @@ export function minutesUntilNextDrink(
   const bac = estimateBAC(drinks, profile, now);
   const target = 0.04;
 
-  if (bac > target) {
-    const hoursToTarget = (bac - target) / METABOLISM_RATE;
-    return { minutes: Math.ceil(hoursToTarget * 60), reason: "metabolize", currentBAC: bac };
-  }
   if (drinks.length === 0) {
     return { minutes: 0, reason: "ready", currentBAC: bac };
   }
+
+  // Estimate the peak BAC contribution of the next drink, based on the most
+  // recent drink the user logged (best signal for what they're currently drinking).
+  const r = widmarkR(profile.gender);
+  const weightGrams = profile.weightKg * 1000;
   const last = drinks.reduce((a, b) => (new Date(a.time) > new Date(b.time) ? a : b));
-  const minsSinceLast = (now.getTime() - new Date(last.time).getTime()) / 60_000;
-  const paceGap = 60; // one drink per hour guideline
-  const remaining = Math.max(0, paceGap - minsSinceLast);
-  if (remaining <= 0) return { minutes: 0, reason: "ready", currentBAC: bac };
-  return { minutes: Math.ceil(remaining), reason: "pace", currentBAC: bac };
+  const nextDrinkPeak = (last.standardDrinks * 14) / (weightGrams * r) * 100;
+
+  // We want: bac (after waiting) + nextDrinkPeak <= target
+  const allowedNow = target - nextDrinkPeak;
+  if (bac <= allowedNow) {
+    return { minutes: 0, reason: "ready", currentBAC: bac };
+  }
+  const hoursToWait = (bac - allowedNow) / METABOLISM_RATE;
+  const reason: "metabolize" | "pace" = bac > target ? "metabolize" : "pace";
+  return { minutes: Math.ceil(hoursToWait * 60), reason, currentBAC: bac };
 }
 
 export function todayKey(d: Date = new Date()): string {
