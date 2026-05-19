@@ -21,8 +21,8 @@ export const Route = createFileRoute("/log")({
   }),
 });
 
-const PROFILE_KEY = "pace:profile";
-const LOG_KEY = "pace:log";
+const PROFILE_KEY = "smart sipping:profile";
+const LOG_KEY = "smart sipping:log";
 
 function loadProfile(): Profile | null {
   if (typeof window === "undefined") return null;
