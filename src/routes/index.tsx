@@ -85,7 +85,7 @@ function Home() {
         <section className="max-w-6xl mx-auto px-6 py-20">
           <div className="rounded-[2rem] bg-primary text-primary-foreground p-12 md:p-16 flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
             <div>
-              <h2 className="font-display text-4xl md:text-5xl max-w-xl leading-tight">Ready to pace your night?</h2>
+              <h2 className="font-display text-4xl md:text-5xl max-w-xl leading-tight">Ready to sip smarter?</h2>
               <p className="opacity-80 mt-4 max-w-md">Log a drink, get a personalized timer for the next one. Resets every morning.</p>
             </div>
             <Link to="/log" className="inline-flex shrink-0 items-center px-7 py-4 rounded-full bg-background text-foreground font-medium hover:scale-[1.02] transition">
