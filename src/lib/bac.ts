@@ -49,8 +49,9 @@ export function estimateBAC(drinks: DrinkEntry[], profile: Profile, now: Date = 
 
 /**
  * Recommended minutes until next safe drink.
- * Strategy: keep BAC under 0.055 (well below 0.08 legal limit; "moderate" zone).
- * If currently safe, suggest a minimum pacing gap of 60 minutes from last drink.
+ * Directly proportional to current estimated BAC: the higher your BAC, the
+ * longer until the next drink. Formula: minutes = (BAC / metabolism rate) * 60.
+ * When BAC is ~0 (sober), the timer is 0 — you're ready.
  */
 export function minutesUntilNextDrink(
   drinks: DrinkEntry[],
@@ -58,21 +59,18 @@ export function minutesUntilNextDrink(
   now: Date = new Date(),
 ): { minutes: number; reason: "metabolize" | "pace" | "ready"; currentBAC: number } {
   const bac = estimateBAC(drinks, profile, now);
-  const target = 0.04;
 
-  if (bac > target) {
-    const hoursToTarget = (bac - target) / METABOLISM_RATE;
-    return { minutes: Math.ceil(hoursToTarget * 60), reason: "metabolize", currentBAC: bac };
-  }
-  if (drinks.length === 0) {
+  if (drinks.length === 0 || bac <= 0) {
     return { minutes: 0, reason: "ready", currentBAC: bac };
   }
-  const last = drinks.reduce((a, b) => (new Date(a.time) > new Date(b.time) ? a : b));
-  const minsSinceLast = (now.getTime() - new Date(last.time).getTime()) / 60_000;
-  const paceGap = 60; // one drink per hour guideline
-  const remaining = Math.max(0, paceGap - minsSinceLast);
-  if (remaining <= 0) return { minutes: 0, reason: "ready", currentBAC: bac };
-  return { minutes: Math.ceil(remaining), reason: "pace", currentBAC: bac };
+
+  // Minutes scale linearly with current BAC.
+  const minutes = Math.ceil((bac / METABOLISM_RATE) * 60);
+  return {
+    minutes,
+    reason: bac > 0.04 ? "metabolize" : "pace",
+    currentBAC: bac,
+  };
 }
 
 export function todayKey(d: Date = new Date()): string {
