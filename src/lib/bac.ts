@@ -64,11 +64,13 @@ export function minutesUntilNextDrink(
     return { minutes: 0, reason: "ready", currentBAC: bac };
   }
 
-  // Minutes scale linearly with current BAC.
-  const minutes = Math.ceil((bac / METABOLISM_RATE) * 60);
+  // Minutes scale linearly with how far current BAC exceeds the 0.03% target.
+  const SAFE_TARGET = 0.03;
+  const excess = Math.max(0, bac - SAFE_TARGET);
+  const minutes = Math.ceil((excess / METABOLISM_RATE) * 60);
   return {
     minutes,
-    reason: bac > 0.04 ? "metabolize" : "pace",
+    reason: bac > SAFE_TARGET ? "metabolize" : "pace",
     currentBAC: bac,
   };
 }
