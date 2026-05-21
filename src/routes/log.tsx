@@ -291,6 +291,7 @@ function ProfileForm({
 }) {
   const [heightCm, setHeightCm] = useState(initial?.heightCm?.toString() ?? "");
   const [weightKg, setWeightKg] = useState(initial?.weightKg?.toString() ?? "");
+  const [age, setAge] = useState(initial?.age?.toString() ?? "");
   const [gender, setGender] = useState<Gender>(initial?.gender ?? "other");
   const [error, setError] = useState<string | null>(null);
 
@@ -298,9 +299,11 @@ function ProfileForm({
     e.preventDefault();
     const h = Number(heightCm);
     const w = Number(weightKg);
+    const a = Number(age);
     if (!h || h < 100 || h > 250) return setError("Enter a realistic height in cm (100–250).");
     if (!w || w < 30 || w > 250) return setError("Enter a realistic weight in kg (30–250).");
-    onSave({ heightCm: h, weightKg: w, gender });
+    if (!a || a < 18 || a > 120) return setError("Enter a realistic age (18–120). You must be of legal drinking age.");
+    onSave({ heightCm: h, weightKg: w, gender, age: a });
   }
 
   return (
