@@ -335,6 +335,17 @@ function ProfileForm({
             required
           />
         </Field>
+        <Field label="Age">
+          <input
+            type="number"
+            min="18"
+            max="120"
+            value={age}
+            onChange={(e) => setAge(e.target.value)}
+            className="w-full bg-background border border-input rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-ring"
+            required
+          />
+        </Field>
       </div>
       <Field label="Gender" className="mt-4">
         <div className="grid grid-cols-3 gap-2">
