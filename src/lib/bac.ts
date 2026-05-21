@@ -16,6 +16,7 @@ export interface Profile {
   heightCm: number;
   weightKg: number;
   gender: Gender;
+  age: number;
 }
 
 // Widmark r factor
