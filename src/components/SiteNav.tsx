@@ -12,7 +12,9 @@ export function SiteNav() {
           <NavLink to="/">Home</NavLink>
           <NavLink to="/learn">Learn</NavLink>
           <NavLink to="/log">Drink Log</NavLink>
+          <NavLink to="/help">Help</NavLink>
           <NavLink to="/about">About</NavLink>
+          <NavLink to="/sources">Sources</NavLink>
         </div>
       </nav>
     </header>

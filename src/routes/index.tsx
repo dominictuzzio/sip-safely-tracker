@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteNav, SiteFooter } from "@/components/SiteNav";
+import { RotatingFact } from "@/components/RotatingFact";
 
 export const Route = createFileRoute("/")({
   component: Home,
@@ -38,15 +39,7 @@ function Home() {
               </div>
             </div>
             <div className="md:col-span-4">
-              <div className="rounded-3xl bg-card border border-border p-6 shadow-sm">
-                <p className="text-xs uppercase tracking-widest text-muted-foreground">Quick fact</p>
-                <p className="font-display text-3xl mt-3 leading-tight">
-                  The liver clears about <span className="text-primary">one standard drink</span> per hour.
-                </p>
-                <p className="text-sm text-muted-foreground mt-4">
-                  Drinking faster than that means alcohol builds up in your blood — that's how a fun night turns risky.
-                </p>
-              </div>
+              <RotatingFact />
             </div>
           </div>
         </section>
