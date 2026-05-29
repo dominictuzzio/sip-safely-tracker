@@ -46,7 +46,7 @@ const SECTIONS = [
       "0.05% — Reduced coordination, lowered alertness.",
       "0.08% — Legally impaired in most U.S. states. Reaction time clearly slowed.",
       "0.15% — Major loss of balance, vomiting likely.",
-      "0.30%+ — Risk of unconsciousness, alcohol poisoning, death.",
+      "0.30%+ — Risk of unconsciousness, alcohol poisoning, and even <strong>death</strong>.",
     ],
   },
   {

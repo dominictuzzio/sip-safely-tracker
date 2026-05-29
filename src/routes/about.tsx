@@ -5,7 +5,7 @@ export const Route = createFileRoute("/about")({
   component: AboutPage,
   head: () => ({
     meta: [
-      { title: "About — Meet the team | Smarter Sipping" },
+      { title: "About SS— Meet the team | Smarter Sipping" },
       { name: "description", content: "Meet the co-founders behind Smarter Sipping: Dominic Tuzzio and David Ellman." },
       { property: "og:title", content: "About — Meet the team | Smarter Sipping" },
       { property: "og:description", content: "Meet the co-founders behind Smarter Sipping." },
@@ -18,15 +18,15 @@ const TEAM = [
     name: "Dominic Tuzzio",
     role: "Co-Founder & Head of Web Development",
     initials: "DT",
-    bio: "Dominic leads the engineering side of Smarter Sipping, turning research on alcohol metabolism and harm reduction into a tool people can actually use on a Friday night. He's obsessed with fast, honest interfaces — no dark patterns, no shame, just clear feedback that helps people make better calls in the moment.",
+    bio: "Hello, my name is Dominc Tuzzio and I’m a freshman at Redwood High School. I enjoy playing soccer, being with friends, and riding bikes. Helping reduce alcohol harm interested me because of multiple reasons. One reason is because I notice that alcohol intake usually results in an unhealthy/harmful night so I wanted to provide a tool to help people drink safely. Also I notice that the main  so-called “solution” of giving a lecture about why alcohol is bad for you doesn't seem to be effective. Actually psychologists found that when the brain is being lectured, it partially turns off and blocks the lecture out. I decided to start helping instead of lecturing people, but by providing a website and information about how to intake alcohol safely.",
     focus: ["Product engineering", "BAC modeling", "Design systems"],
   },
   {
     name: "David Ellman",
-    role: "Co-Founder & Chief Media Officer",
+    role: "Co-Founder & Media Orgnizer",
     initials: "DE",
-    bio: "David shapes how Smarter Sipping shows up in the world. With a background in storytelling and brand strategy, he's focused on rewriting the conversation around drinking — away from fear and judgment, toward education, agency, and looking out for the people around you.",
-    focus: ["Brand & messaging", "Partnerships", "Public health storytelling"],
+    bio: "Hi, I’m David Ellman, a freshman at Redwood High School. Outside of class, you can usually find me playing sports, exploring the outdoors around Marin, and hanging out with my friends. I chose this as my project topic because I have noticed the unhealthy coping mechanisms like binge drinking have been normalized in the community surrounding me. By building this interactive and educational website and social media page with Dominic, our goal is to provide information, tools, and awareness to reduce binge drinking and increase overall alcohol safety. We will work step by step no matter how long it takes to see improvement, but I have a genuine desire to make our community a safer and healthier place for everyone.",
+    focus: ["Brand & messaging", "Partnerships", "Storytelling"],
   },
 ];
 

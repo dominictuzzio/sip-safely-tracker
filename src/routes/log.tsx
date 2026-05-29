@@ -10,6 +10,7 @@ import {
   type Gender,
   type Profile,
 } from "@/lib/bac";
+import { Bold } from "lucide-react";
 
 export const Route = createFileRoute("/log")({
   component: LogPage,
@@ -154,7 +155,7 @@ function LogPage() {
               </div>
               {bac > 0.08 && (
                 <p className="mt-6 text-sm p-4 rounded-2xl bg-destructive/10 text-destructive border border-destructive/30">
-                  You're estimated above 0.08% BAC. Stop drinking, hydrate, and do not drive. If anyone is confused, vomiting unconscious, or breathing slowly — call 911.
+                  You're estimated above 0.08% BAC. Stop drinking, hydrate, and <strong>do not drive</strong>. If anyone is confused, vomiting unconscious, or breathing slowly — call 911.
                 </p>
               )}
             </section>
