@@ -1,6 +1,8 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteNav, SiteFooter } from "@/components/SiteNav";
 import { RotatingFact } from "@/components/RotatingFact";
+import heroStillLife from "@/assets/hero-still-life.jpg";
+
 
 export const Route = createFileRoute("/")({
   component: Home,
