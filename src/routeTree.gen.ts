@@ -9,11 +9,18 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as SourcesRouteImport } from './routes/sources'
 import { Route as LogRouteImport } from './routes/log'
 import { Route as LearnRouteImport } from './routes/learn'
+import { Route as HelpRouteImport } from './routes/help'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
 
+const SourcesRoute = SourcesRouteImport.update({
+  id: '/sources',
+  path: '/sources',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const LogRoute = LogRouteImport.update({
   id: '/log',
   path: '/log',
@@ -22,6 +29,11 @@ const LogRoute = LogRouteImport.update({
 const LearnRoute = LearnRouteImport.update({
   id: '/learn',
   path: '/learn',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HelpRoute = HelpRouteImport.update({
+  id: '/help',
+  path: '/help',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AboutRoute = AboutRouteImport.update({
@@ -38,39 +50,54 @@ const IndexRoute = IndexRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/help': typeof HelpRoute
   '/learn': typeof LearnRoute
   '/log': typeof LogRoute
+  '/sources': typeof SourcesRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/help': typeof HelpRoute
   '/learn': typeof LearnRoute
   '/log': typeof LogRoute
+  '/sources': typeof SourcesRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/help': typeof HelpRoute
   '/learn': typeof LearnRoute
   '/log': typeof LogRoute
+  '/sources': typeof SourcesRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/about' | '/learn' | '/log'
+  fullPaths: '/' | '/about' | '/help' | '/learn' | '/log' | '/sources'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/about' | '/learn' | '/log'
-  id: '__root__' | '/' | '/about' | '/learn' | '/log'
+  to: '/' | '/about' | '/help' | '/learn' | '/log' | '/sources'
+  id: '__root__' | '/' | '/about' | '/help' | '/learn' | '/log' | '/sources'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
+  HelpRoute: typeof HelpRoute
   LearnRoute: typeof LearnRoute
   LogRoute: typeof LogRoute
+  SourcesRoute: typeof SourcesRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/sources': {
+      id: '/sources'
+      path: '/sources'
+      fullPath: '/sources'
+      preLoaderRoute: typeof SourcesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/log': {
       id: '/log'
       path: '/log'
@@ -83,6 +110,13 @@ declare module '@tanstack/react-router' {
       path: '/learn'
       fullPath: '/learn'
       preLoaderRoute: typeof LearnRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/help': {
+      id: '/help'
+      path: '/help'
+      fullPath: '/help'
+      preLoaderRoute: typeof HelpRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/about': {
@@ -105,9 +139,21 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
+  HelpRoute: HelpRoute,
   LearnRoute: LearnRoute,
   LogRoute: LogRoute,
+  SourcesRoute: SourcesRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { startInstance } from './start.ts'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+    config: Awaited<ReturnType<typeof startInstance.getOptions>>
+  }
+}
