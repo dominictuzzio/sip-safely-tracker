@@ -1,3 +1,6 @@
+// <!DOCTYPE html>
+// <html lang="en">
+// <script>
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteNav, SiteFooter } from "@/components/SiteNav";
 import { RotatingFact } from "@/components/RotatingFact";
@@ -111,3 +114,5 @@ function Home() {
     </div>
   );
 }
+// </script>
+// </html>
