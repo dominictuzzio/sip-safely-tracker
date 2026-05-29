@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { SiteNav, SiteFooter } from "@/components/SiteNav";
+import aboutDesk from "@/assets/about-desk.jpg";
 
 export const Route = createFileRoute("/about")({
   component: AboutPage,
@@ -43,6 +44,16 @@ function AboutPage() {
           <p className="mt-6 text-lg text-muted-foreground max-w-2xl">
             Smarter Sipping started with a simple idea: people deserve clear, judgment-free information about what alcohol actually does to them — and tools to act on it.
           </p>
+          <figure className="mt-12 rounded-[2rem] overflow-hidden border border-border">
+            <img
+              src={aboutDesk}
+              alt="An open notebook and pen beside a glass of water on a warm wooden desk in soft window light"
+              width={1536}
+              height={1024}
+              loading="lazy"
+              className="w-full h-[34vh] md:h-[44vh] object-cover"
+            />
+          </figure>
         </header>
 
         <div className="space-y-10">
