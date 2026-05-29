@@ -1,5 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { SiteNav, SiteFooter } from "@/components/SiteNav";
+import helpMarin from "@/assets/help-marin.jpg";
+
 
 export const Route = createFileRoute("/help")({
   component: HelpPage,
