@@ -42,9 +42,27 @@ const LOCATIONS = [
     hours: "Monday – Friday • 9:00 am – 12:00 pm & 1:00 pm – 4:30 pm",
   },
 ];
+  {
+    name: "West Marin Health and Human Services Multi-Service Center",
+    address: "1 Sixth Street, Point Reyes Station",
+    hours: "Monday – Friday • 9:00 am – 12:00 pm & 1:00 pm – 4:30 pm",
+  },
+  {
+    name: "Bayside Marin",
+    address: "718 4th St, San Rafael",
+    hours: "24 / 7 access",
+  },
+  {
+    name: "Honeycomb Wellness Center",
+    address: "350 Bel Marin Keys Blvd f300, Novato",
+    hours: "24 / 7 access",
+  },
+  {
+    name: "Mind Therapy Clinic",
+    address: "100 Tamal Plaza Suite 200, Corte Madera",
+    hours: "Monday – Friday • 9:00 am – 5:00 pm",
+  },
 
-function HelpPage() {
-  return (
     <div className="min-h-screen flex flex-col">
       <SiteNav />
       <main className="flex-1 max-w-6xl mx-auto px-6 py-20 w-full">
