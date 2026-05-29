@@ -2,7 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteNav, SiteFooter } from "@/components/SiteNav";
 import { RotatingFact } from "@/components/RotatingFact";
 import heroStillLife from "@/assets/hero-still-life.jpg";
-
+import indexFriends from "@/assets/index-friends.jpg";
 
 export const Route = createFileRoute("/")({
   component: Home,
@@ -91,6 +91,26 @@ function Home() {
                 <p className="text-muted-foreground mt-4 text-sm leading-relaxed">{c.body}</p>
               </div>
             ))}
+          </div>
+        </section>
+
+        {/* Lifestyle band */}
+        <section className="max-w-6xl mx-auto px-6 pb-20">
+          <div className="grid md:grid-cols-5 gap-8 items-center">
+            <figure className="md:col-span-3 rounded-[2rem] overflow-hidden border border-border">
+              <img
+                src={indexFriends}
+                alt="Overhead view of friends clinking sparkling-water glasses over a shared dinner in warm evening light"
+                width={1536}
+                height={1024}
+                loading="lazy"
+                className="w-full h-[36vh] md:h-[48vh] object-cover"
+              />
+            </figure>
+            <div className="md:col-span-2">
+              <h3 className="font-display text-3xl md:text-4xl leading-tight">The night doesn't have to revolve around alcohol.</h3>
+              <p className="mt-4 text-muted-foreground">A glass of soda water with lime looks the same as a cocktail — and your friends almost never notice. Pace yourself, and the evening lasts longer.</p>
+            </div>
           </div>
         </section>
 
