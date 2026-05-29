@@ -1,5 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { SiteNav, SiteFooter } from "@/components/SiteNav";
+import learnGlass from "@/assets/learn-glass.jpg";
+
 
 export const Route = createFileRoute("/learn")({
   component: LearnPage,
