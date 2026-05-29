@@ -42,8 +42,10 @@ function Home() {
             </div>
             <div className="md:col-span-4">
               <RotatingFact />
+            </div>
           </div>
         </section>
+
 
         {/* Editorial image band */}
         <section className="max-w-6xl mx-auto px-6 pb-16">
