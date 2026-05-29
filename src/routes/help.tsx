@@ -1,5 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { SiteNav, SiteFooter } from "@/components/SiteNav";
+import helpMarin from "@/assets/help-marin.jpg";
+
 
 export const Route = createFileRoute("/help")({
   component: HelpPage,
@@ -71,6 +73,18 @@ function HelpPage() {
         <p className="mt-6 text-lg text-muted-foreground max-w-2xl">
           These locations offer confidential help for individuals struggling with alcohol use. Walk in — no appointment required.
         </p>
+
+        <figure className="mt-12 rounded-[2rem] overflow-hidden border border-border">
+          <img
+            src={helpMarin}
+            alt="Marin County coastal hills at soft golden dawn with low fog over the Pacific"
+            width={1920}
+            height={1080}
+            loading="lazy"
+            className="w-full h-[34vh] md:h-[46vh] object-cover"
+          />
+        </figure>
+
 
         <div className="mt-12 grid md:grid-cols-2 gap-6">
           {LOCATIONS.map((l) => (
