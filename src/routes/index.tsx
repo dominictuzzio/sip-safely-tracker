@@ -42,7 +42,8 @@ function Home() {
             </div>
             <div className="md:col-span-4">
               <RotatingFact />
-            </div>
+          </div>
+        </section>
 
         {/* Editorial image band */}
         <section className="max-w-6xl mx-auto px-6 pb-16">
@@ -60,7 +61,6 @@ function Home() {
           </figcaption>
         </section>
 
-        </section>
 
         {/* Three pillars */}
         <section className="max-w-6xl mx-auto px-6 py-16 border-t border-border">
