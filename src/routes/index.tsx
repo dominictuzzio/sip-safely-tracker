@@ -43,7 +43,23 @@ function Home() {
             <div className="md:col-span-4">
               <RotatingFact />
             </div>
-          </div>
+
+        {/* Editorial image band */}
+        <section className="max-w-6xl mx-auto px-6 pb-16">
+          <figure className="rounded-[2rem] overflow-hidden border border-border">
+            <img
+              src={heroStillLife}
+              alt="A tall glass of water beside an empty wine glass on warm linen, soft morning light"
+              width={1920}
+              height={1080}
+              className="w-full h-[42vh] md:h-[56vh] object-cover"
+            />
+          </figure>
+          <figcaption className="mt-4 text-sm text-muted-foreground max-w-xl">
+            One for the body, one for the night. Alternating water with alcohol is the single easiest habit that keeps you in the safe zone.
+          </figcaption>
+        </section>
+
         </section>
 
         {/* Three pillars */}
