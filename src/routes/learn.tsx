@@ -106,22 +106,46 @@ function LearnPage() {
         </nav>
 
         <div className="space-y-24">
-          {SECTIONS.map((s) => (
-            <section key={s.id} id={s.id} className="scroll-mt-24">
-              <p className="text-xs uppercase tracking-[0.2em] text-accent font-medium">{s.eyebrow}</p>
-              <h2 className="font-display text-3xl md:text-4xl mt-3 leading-tight">{s.title}</h2>
-              <p className="mt-5 text-muted-foreground leading-relaxed">{s.body}</p>
-              <ul className="mt-6 space-y-3">
-                {s.points.map((p, i) => (
-                  <li key={i} className="flex gap-4 items-start p-4 rounded-2xl bg-card border border-border">
-                    <span className="font-display text-primary text-lg mt-[-2px]">·</span>
-                    <span className="text-sm">{p}</span>
-                  </li>
-                ))}
-              </ul>
-            </section>
-          ))}
+          {SECTIONS.map((s) => {
+            const sectionImage =
+              s.id === "binge"
+                ? { src: standardDrink, alt: "Infographic comparing a 12 oz beer, 5 oz wine, and 1.5 oz spirit — each equals one standard drink." }
+                : s.id === "bac"
+                ? { src: bacChart, alt: "Bar chart of Blood Alcohol Concentration levels and their effects from 0.02% to 0.30%." }
+                : s.id === "safer"
+                ? { src: duiChart, alt: "Bar chart of U.S. drunk driving deaths from 2015 to 2024, averaging about 11,500 per year." }
+                : null;
+
+            return (
+              <section key={s.id} id={s.id} className="scroll-mt-24">
+                <p className="text-xs uppercase tracking-[0.2em] text-accent font-medium">{s.eyebrow}</p>
+                <h2 className="font-display text-3xl md:text-4xl mt-3 leading-tight">{s.title}</h2>
+                <p className="mt-5 text-muted-foreground leading-relaxed">{s.body}</p>
+                {sectionImage && (
+                  <figure className="mt-8 rounded-2xl overflow-hidden border border-border bg-card">
+                    <img
+                      src={sectionImage.src}
+                      alt={sectionImage.alt}
+                      width={1536}
+                      height={1024}
+                      loading="lazy"
+                      className="w-full h-auto"
+                    />
+                  </figure>
+                )}
+                <ul className="mt-6 space-y-3">
+                  {s.points.map((p, i) => (
+                    <li key={i} className="flex gap-4 items-start p-4 rounded-2xl bg-card border border-border">
+                      <span className="font-display text-primary text-lg mt-[-2px]">·</span>
+                      <span className="text-sm">{p}</span>
+                    </li>
+                  ))}
+                </ul>
+              </section>
+            );
+          })}
         </div>
+
       </main>
       <SiteFooter />
     </div>
