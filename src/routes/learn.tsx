@@ -90,7 +90,6 @@ function LearnPage() {
             The honest stuff about <em className="text-primary not-italic">alcohol</em>.
           </h1>
           <p className="mt-6 text-lg text-muted-foreground max-w-2xl">
-          <p className="mt-6 text-lg text-muted-foreground max-w-2xl">
             No lectures, no shame. Just what's actually happening in your body and what the data says about staying safe.
           </p>
           <figure className="mt-12 rounded-[2rem] overflow-hidden border border-border">
@@ -105,7 +104,6 @@ function LearnPage() {
           </figure>
         </header>
 
-        </header>
 
         <nav className="mb-16 flex flex-wrap gap-2">
           {SECTIONS.map((s) => (
