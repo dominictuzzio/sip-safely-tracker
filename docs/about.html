@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>About SS— Meet the team | Smarter Sipping</title>
+<meta name="description" content="Meet the co-founders behind Smarter Sipping: Dominic Tuzzio and David Ellman." />
+<meta property="og:title" content="About — Meet the team | Smarter Sipping" />
+<meta property="og:description" content="Meet the co-founders behind Smarter Sipping." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<div class="page">
+  <header class="nav">
+    <nav class="nav-inner">
+      <a href="index.html" class="brand"><span class="brand-mark">SS</span><span class="brand-name">Smarter Sipping</span></a>
+      <div class="nav-links">
+        <a class="nav-link" href="index.html">Home</a>
+        <a class="nav-link" href="learn.html">Learn</a>
+        <a class="nav-link" href="log.html">Drink Log</a>
+        <a class="nav-link" href="help.html">Help</a>
+        <a class="nav-link" href="about.html">About</a>
+        <a class="nav-link" href="sources.html">Sources</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="main container-narrow" style="padding-top:4rem;padding-bottom:4rem">
+    <header class="page-header">
+      <p class="eyebrow">About</p>
+      <h1>The people behind <em class="no-italic">Smarter Sipping</em>.</h1>
+      <p>Smarter Sipping started with a simple idea: people deserve clear, judgment-free information about what alcohol actually does to them — and tools to act on it.</p>
+      <figure class="mt-12 img-band">
+        <img src="assets/about-desk.jpg" width="1536" height="1024" loading="lazy" alt="An open notebook and pen beside a glass of water on a warm wooden desk in soft window light" style="height:34vh" />
+      </figure>
+    </header>
+
+    <div class="team">
+      <article class="team-card">
+        <div class="team-inner">
+          <div class="team-avatar">DT</div>
+          <div style="flex:1">
+            <h2>Dominic Tuzzio</h2>
+            <p class="team-role">Co-Founder & Head of Web Development</p>
+            <p class="team-bio">Hello, my name is Dominc Tuzzio and I’m a freshman at Redwood High School. I enjoy playing soccer, being with friends, and riding bikes. Helping reduce alcohol harm interested me because of multiple reasons. One reason is because I notice that alcohol intake usually results in an unhealthy/harmful night so I wanted to provide a tool to help people drink safely. Also I notice that the main so-called “solution” of giving a lecture about why alcohol is bad for you doesn't seem to be effective. Actually psychologists found that when the brain is being lectured, it partially turns off and blocks the lecture out. I decided to start helping instead of lecturing people, but by providing a website and information about how to intake alcohol safely.</p>
+            <ul class="tag-list"><li class="tag">Product engineering</li><li class="tag">BAC modeling</li><li class="tag">Design systems</li></ul>
+          </div>
+        </div>
+      </article>
+      <article class="team-card">
+        <div class="team-inner">
+          <div class="team-avatar">DE</div>
+          <div style="flex:1">
+            <h2>David Ellman</h2>
+            <p class="team-role">Co-Founder & Media Orgnizer</p>
+            <p class="team-bio">Hi, I’m David Ellman, a freshman at Redwood High School. Outside of class, you can usually find me playing sports, exploring the outdoors around Marin, and hanging out with my friends. I chose this as my project topic because I have noticed the unhealthy coping mechanisms like binge drinking have been normalized in the community surrounding me. By building this interactive and educational website and social media page with Dominic, our goal is to provide information, tools, and awareness to reduce binge drinking and increase overall alcohol safety. We will work step by step no matter how long it takes to see improvement, but I have a genuine desire to make our community a safer and healthier place for everyone.</p>
+            <ul class="tag-list"><li class="tag">Brand & messaging</li><li class="tag">Partnerships</li><li class="tag">Storytelling</li></ul>
+          </div>
+        </div>
+      </article>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <p>© <span id="year"></span> Smarter Sipping. Educational tool — not medical advice.</p>
+      <p>If you or someone you know is struggling, call <a href="tel:988">988</a> or SAMHSA <a href="tel:18006624357">1-800-662-4357</a>.</p>
+    </div>
+  </footer>
+</div>
+<script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+<script src="app.js"></script>
+</body>
+</html>
