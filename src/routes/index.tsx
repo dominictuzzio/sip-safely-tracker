@@ -67,8 +67,25 @@ function Home() {
         </section>
 
 
+        {/* Stats band */}
+        <section className="border-y border-border bg-card/50">
+          <div className="max-w-6xl mx-auto px-6 py-14 grid grid-cols-2 md:grid-cols-4 gap-8">
+            {[
+              { n: "11,500", l: "Avg. yearly drunk-driving deaths (2015–2024)" },
+              { n: "44 min", l: "Between U.S. drunk-driving deaths in 2024" },
+              { n: "804,926", l: "DUI arrests in 2024" },
+              { n: "$58B", l: "Annual U.S. economic cost" },
+            ].map((s) => (
+              <div key={s.l}>
+                <p className="font-display text-4xl md:text-5xl text-primary leading-none">{s.n}</p>
+                <p className="mt-3 text-xs uppercase tracking-widest text-muted-foreground leading-relaxed">{s.l}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
         {/* Three pillars */}
-        <section className="max-w-6xl mx-auto px-6 py-16 border-t border-border">
+        <section className="max-w-6xl mx-auto px-6 py-16">
           <h2 className="font-display text-4xl md:text-5xl mb-12 max-w-2xl">Three things worth knowing before you pour another.</h2>
           <div className="grid md:grid-cols-3 gap-6">
             {[
