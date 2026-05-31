@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Smarter Sipping — Drink smart, stay safe</title>
+<meta name="description" content="Sip safely. Learn how alcohol affects your body, recognize binge drinking, and track drinks safely." />
+<meta property="og:title" content="Smarter Sipping — Drink smart, stay safe" />
+<meta property="og:description" content="Track drinks, learn the risks, pace yourself." />
+<meta property="og:type" content="website" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<div class="page">
+  <header class="nav">
+    <nav class="nav-inner">
+      <a href="index.html" class="brand"><span class="brand-mark">SS</span><span class="brand-name">Smarter Sipping</span></a>
+      <div class="nav-links">
+        <a class="nav-link" href="index.html">Home</a>
+        <a class="nav-link" href="learn.html">Learn</a>
+        <a class="nav-link" href="log.html">Drink Log</a>
+        <a class="nav-link" href="help.html">Help</a>
+        <a class="nav-link" href="about.html">About</a>
+        <a class="nav-link" href="sources.html">Sources</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="main">
+    <section class="container hero">
+      <div class="hero-grid">
+        <div>
+          <p class="eyebrow" style="margin-bottom:1.5rem">A gentle guide to drinking</p>
+          <h1>Know how to <em class="no-italic">sip smarter</em>.<br />Enjoy the night.</h1>
+          <p class="lead">Smart Sipping helps you understand what alcohol does to your body — and quietly times your next drink so you stay in the safe zone.</p>
+          <div class="hero-actions">
+            <a href="log.html" class="btn btn-primary">Start a drink log →</a>
+            <a href="learn.html" class="btn btn-outline">Learn the basics</a>
+          </div>
+        </div>
+        <div id="rotating-fact" class="fact">
+          <p class="eyebrow-sm">Quick fact</p>
+          <p class="fact-header"></p>
+          <p class="fact-sub"></p>
+          <div class="fact-dots">
+            <button class="fact-dot" aria-label="Fact 1"></button>
+            <button class="fact-dot" aria-label="Fact 2"></button>
+            <button class="fact-dot" aria-label="Fact 3"></button>
+            <button class="fact-dot" aria-label="Fact 4"></button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="container" style="padding-bottom:4rem">
+      <figure class="img-band" style="margin:0">
+        <img src="assets/hero-still-life.jpg" width="1920" height="1080" alt="A tall glass of water beside an empty wine glass on warm linen, soft morning light" />
+      </figure>
+      <figcaption class="img-caption">One for the body, one for the night. Alternating water with alcohol is the single easiest habit that keeps you in the safe zone.</figcaption>
+    </section>
+
+    <section class="container section section-bordered">
+      <h2 class="section-title">Three things worth knowing before you pour another.</h2>
+      <div class="pillars">
+        <div class="pillar"><p class="pillar-k">01</p><h3>A standard drink isn't what you think</h3><p>12oz beer, 5oz wine, and a 1.5oz shot all contain about 14g of pure alcohol. A craft IPA or a mixed cocktail often counts as more.</p></div>
+        <div class="pillar"><p class="pillar-k">02</p><h3>Binge drinking has a definition</h3><p>4+ drinks for women or 5+ for men within ~2 hours pushes most people over 0.08% BAC. That's the legal limit for driving — and well into impairment.</p></div>
+        <div class="pillar"><p class="pillar-k">03</p><h3>Pacing changes everything</h3><p>Water between drinks, food in your stomach, and a one-drink-per-hour rhythm let your body keep up.</p></div>
+      </div>
+    </section>
+
+    <section class="container section">
+      <div class="cta">
+        <div>
+          <h2>Ready to sip smarter?</h2>
+          <p>Log a drink, get a personalized timer for the next one. Resets every morning.</p>
+        </div>
+        <a href="log.html" class="btn btn-light">Open the log →</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <p>© <span id="year"></span> Smarter Sipping. Educational tool — not medical advice.</p>
+      <p>If you or someone you know is struggling, call <a href="tel:988">988</a> or SAMHSA <a href="tel:18006624357">1-800-662-4357</a>.</p>
+    </div>
+  </footer>
+</div>
+<script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+<script src="app.js"></script>
+</body>
+</html>

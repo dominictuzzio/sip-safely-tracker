@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Drink Log — Pace yourself | Smarter Sipping</title>
+<meta name="description" content="Log drinks, get personalized pacing timers, and track your BAC throughout the night." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<div class="page">
+  <header class="nav">
+    <nav class="nav-inner">
+      <a href="index.html" class="brand"><span class="brand-mark">SS</span><span class="brand-name">Smarter Sipping</span></a>
+      <div class="nav-links">
+        <a class="nav-link" href="index.html">Home</a>
+        <a class="nav-link" href="learn.html">Learn</a>
+        <a class="nav-link" href="log.html">Drink Log</a>
+        <a class="nav-link" href="help.html">Help</a>
+        <a class="nav-link" href="about.html">About</a>
+        <a class="nav-link" href="sources.html">Sources</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="main container" style="padding-top:3rem;padding-bottom:3rem">
+    <header class="mb-12 flex-between">
+      <div>
+        <p class="eyebrow">Tonight</p>
+        <h1 style="font-size:clamp(2.5rem,6vw,4rem);margin-top:0.5rem">Drink log</h1>
+        <p class="muted mt-3" style="max-width:32rem">Resets at midnight. Stored only on this device.</p>
+      </div>
+      <button id="edit-profile-btn" class="btn btn-outline" style="padding:0.5rem 1rem;font-size:0.875rem">Edit profile</button>
+    </header>
+
+    <div id="log-root"></div>
+
+    <p class="text-xs muted mt-12" style="max-width:36rem">
+      BAC estimates use the Widmark formula and are approximations only. Many factors — food, hydration, medication, sleep, individual metabolism — affect real BAC. Never use this app to decide whether to drive.
+    </p>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <p>© <span id="year"></span> Smarter Sipping. Educational tool — not medical advice.</p>
+      <p>If you or someone you know is struggling, call <a href="tel:988">988</a> or SAMHSA <a href="tel:18006624357">1-800-662-4357</a>.</p>
+    </div>
+  </footer>
+</div>
+<script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+<script src="app.js"></script>
+</body>
+</html>
